@@ -1,0 +1,3 @@
+#!/bin/sh
+# ponderer's discussion archive tool: see tools/discussions --help.
+exec node "$(dirname "$0")/discussions.ts" "$@"

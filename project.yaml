@@ -1,0 +1,19 @@
+# Project definition (ag.project.v2). Repositories come from .gitmodules;
+# local areas (folders of this repository that workflows bind) are below.
+schema: ag.project.v2
+id: ponderer
+name: ponderer (discussions)
+devdocs: directory
+intent: "Conduct cross-project discussions of a person, Front and project agents with different missions and contexts, keep their records, and learn from them: progress each discussion as recorded activities, keep its archive (written by WFE) and its source-linked summary, evaluate how discussions went, and improve the practice from local evidence and sourced research. Reusable discussion knowledge is kept in wedo-argue and literature research in study-argue; the Developer's intent and the choice of participants are Front's; what a discussion found about its subject is the owning project's."
+goals:
+  - Each discussion progresses through recorded activities (announce, ask, ponder, talk) chosen by the conductor, not a fixed debate procedure
+  - Every decision names the facts it rests on and why the next question goes to a particular participant
+  - Questions, waits, agreed reviews and summaries each have one owner and a defined receiver until done or explicitly dropped
+  - Every discussion has a reproducible archive here and, when wanted, a summary that cites the original speech and keeps disagreements and open questions
+  - Evaluations of named discussions, sourced research and reusable findings are kept apart, and a change of practice is an explicit, visible adoption of a wedo-argue revision
+areas:
+  discussions: {description: "One folder per discussion: manifest.json and transcript.jsonl (written only by WFE's archive writer) and summary.md (written by synthesize runs)"}
+  episodes: {description: "Evaluations of discussions: index.json (ag.argue.episodes.v1, the comparison index) and one analysis per episode; conditions a record does not hold are listed as unknown"}
+  tools: {description: "tools/discussions: read, validate and cite the archive, the episode index and the pinned wedo-argue (deterministic; tools/discussions --help)"}
+# Project guides (workflow_editor p13): every workflow inherits them.
+guides: [agent/guide.md]

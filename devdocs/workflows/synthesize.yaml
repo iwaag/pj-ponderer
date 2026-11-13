@@ -1,0 +1,29 @@
+# Workflow definition (ag.workflow.v2). Edit here or in the workflow editor.
+schema: ag.workflow.v2
+id: synthesize
+name: Synthesize
+intent: |-
+  Turn one discussion's archived record into its summary (summary.md beside
+  the archive): the person's intent, the alternatives and reasoning,
+  conclusions, disagreements and open questions, each citing the original
+  speech at the archived revision and saying whose words they were — and
+  tell the discussion what was written.
+documentation:
+  policy: custom
+  plan: false
+  reports: false
+  final: false
+execution:
+  agent: ponderer-agent
+  profile: sonnet
+  guides: [agent/synthesize.md]
+intake:
+  zulip: requests
+repositories:
+  project: {path: ., access: editable}
+nodes:
+  synthesize:
+    type: do
+    name: Synthesize
+    description: Write <archive path>/summary.md (discussions/<id>/ or conversations/<id>/) from the archived transcript, integrate, and tell the discussion (wfe conversation contribute --kind synthesis).
+    repositories: []

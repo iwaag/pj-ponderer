@@ -1,0 +1,6 @@
+[submodule "study/study-argue"]
+	path = study/study-argue
+	url = ../study-argue.git
+[submodule "wedo/wedo-argue"]
+	path = wedo/wedo-argue
+	url = ../wedo-argue.git

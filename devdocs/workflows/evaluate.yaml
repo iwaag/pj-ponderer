@@ -1,0 +1,32 @@
+# Workflow definition (ag.workflow.v2). Edit here or in the workflow editor.
+schema: ag.workflow.v2
+id: evaluate
+name: Evaluate
+intent: |-
+  Evaluate how discussions were conducted from their archives, run records
+  and earlier analyses, keeping what agents said apart from what execution
+  recorded; record the evaluation in episodes/; when the evidence calls for
+  it, commission bounded literature research into study-argue, revise or
+  qualify wedo-argue with provenance and contrary observations, and adopt
+  the revision by moving this project's pins.
+documentation:
+  policy: custom
+  plan: false
+  reports: false
+  final: false
+execution:
+  agent: ponderer-agent
+  profile: sonnet
+  guides: [agent/evaluate.md]
+intake:
+  zulip: requests
+repositories:
+  project: {path: ., access: editable}
+  wedo-argue: {path: wedo/wedo-argue, access: editable}
+  study-argue: {path: study/study-argue, access: readonly}
+nodes:
+  evaluate:
+    type: do
+    name: Evaluate
+    description: Read the discussions and their records, write or revise the evaluation in episodes/, and decide what (if anything) the practice needs — research, a wedo-argue revision, an adoption — adding that work to the run.
+    repositories: [wedo-argue, study-argue]

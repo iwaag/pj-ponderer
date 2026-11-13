@@ -1,0 +1,36 @@
+# Workflow definition (ag.workflow.v2). Edit here or in the workflow editor.
+schema: ag.workflow.v2
+id: conduct
+name: Conduct
+intent: |-
+  Conduct one discussion for as long as it lasts: understand what the
+  requester wants from it, find what is known and what is missing, ask the
+  participants who can supply it, decide each next step from what was said
+  and what is still owed, follow commissioned work through to its review
+  and preservation, and conclude with an account of what remains and who
+  will receive it — as recorded activities of this run's own graph, which
+  starts with one decision, grows turn by turn as the discussion does, and
+  rests between turns.
+documentation:
+  policy: custom
+  plan: false
+  reports: false
+  final: false
+execution:
+  agent: ponderer-agent
+  profile: sonnet
+  # The conductor's turns use the conversation lane, so the discussion moves while
+  # project work holds the default lane.
+  lane: conversation
+  guides: [agent/conduct.md]
+intake:
+  zulip: requests
+repositories:
+  project: {path: ., access: editable}
+nodes:
+  ponder:
+    type: do
+    activity: ponder
+    name: Ponder
+    description: Read the discussion and what is owed (wfe conversation state, show), decide the next activities and why, and add them (wfe conversation ponder --next).
+    repositories: []

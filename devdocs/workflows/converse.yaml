@@ -1,0 +1,32 @@
+# Workflow definition (ag.workflow.v2). Edit here or in the workflow editor.
+schema: ag.workflow.v2
+id: converse
+name: Converse
+intent: |-
+  Serve one message of a person consulting ponderer directly, without
+  ponderer leading anything: answer from ponderer's records of past
+  discussions, its evaluations and its pinned knowledge, or say what a
+  discussion it would lead could settle.
+documentation:
+  policy: custom
+  plan: false
+  reports: false
+  final: false
+execution:
+  agent: ponderer-agent
+  profile: sonnet
+  # A conversational turn uses the conversation lane.
+  lane: conversation
+  guides: [agent/converse.md]
+# A turn serves one message of a conversation; it is never a request
+# topic's or a delegation's target (workflow_editor fix2).
+intake:
+  zulip: ""
+repositories:
+  project: {path: ., access: editable}
+nodes:
+  talk:
+    type: talk
+    name: Talk
+    description: Understand the message in its conversation and answer it from ponderer's records.
+    repositories: []
