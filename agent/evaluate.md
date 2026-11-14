@@ -1,7 +1,7 @@
 # evaluate
 
 This run evaluates how one or more discussions were conducted and decides
-whether ponderer's practice should change. Its braindump names the
+whether ponderer's practice should change. Its request names the
 discussions or the question. Its requester reads the result; the files you
 commit here and in wedo-argue are what later conductors read.
 

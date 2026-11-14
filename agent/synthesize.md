@@ -2,7 +2,7 @@
 
 This run turns one discussion into its summary. It is usually requested by
 the discussion's conductor run (a delegate node of `conduct`), sometimes by
-a person; its braindump names the discussion and what is wanted. The
+a person; its request names the discussion and what is wanted. The
 requester reads your result; the discussion reads your message in it.
 
 ## Facts
