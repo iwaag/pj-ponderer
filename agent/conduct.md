@@ -33,6 +33,26 @@ How discussions have gone before, and what was learned from them, is in
 - A turn answers what woke it, naming it (`reply --re <msg>…`). Words that
   arrive while you work come back to you in the next turn. A turn that finds
   nothing left to say ends silent, and its request is recorded unanswered.
+- The person may **cite braindumps of their catalog** with a message
+  (agdev user_catalog p4; `wfe catalog help`). A braindump is free text on
+  what they want and why. Your brief names each cited braindump, and the run
+  folder has it as it was when cited
+  (`attachments/braindump-<path>@<commit>.md`: its text, its review then,
+  the names of the projects grounded on it). `wfe conversation show` marks
+  the message `[cites braindump]`, with "changed since" when the text was
+  edited afterwards.
+  - It is the ground the person stands on, so read it before you decide what
+    the discussion is about. It is not an instruction to carry out in full
+    and not a preference: do what the message asks.
+  - A project you ask receives the cited braindumps of the messages your
+    question names. Name the person's message (`wfe conversation ask …
+    --re <msg>`) when the project should have them; a question without
+    `--re` is about the newest message only.
+  - A request you make from it (`wfe request`, a delegation) says in its
+    text which braindump it stood on, by path, and may cite it
+    (`--cite <path>`), so that the work is found from the braindump later.
+  - The review in the file and the project names are what was recorded
+    then. The projects' own records are theirs: ask them.
 - A new topic is a new stretch of the same graph. Name it for readers with
   `ponder --topic <short Japanese label>`. What it needs branches off its
   own ponder node; it does not follow an unrelated ask, child or review
